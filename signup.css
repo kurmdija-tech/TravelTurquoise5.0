@@ -1,0 +1,155 @@
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #dbf7ff, #d9f2e1);
+  padding: 16px; /* ✅ added so it doesn’t stick to screen edges on mobile */
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-btn:hover {
+  color: rgb(91, 183, 232);
+}
+
+.auth-container{
+  background:white;
+  padding:30px;
+  width:100%;
+  max-width:400px;
+  border-radius:16px;
+  box-shadow:0 6px 14px rgba(0,0,0,0.2);
+  position: relative; /* ✅ added so close button positions correctly inside */
+}
+
+.auth-container h2{
+  text-align:center;
+  margin-bottom:10px;
+}
+
+.auth-container p{
+  text-align:center;
+  color:#555;
+}
+
+label{
+  display:block;
+  margin-top:12px;
+  font-weight:bold;
+}
+
+input{
+  width:100%;
+  padding:10px;
+  margin-top:6px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+.btn{
+  width:100%;
+  padding:12px;
+  margin-top:16px;
+  border:none;
+  border-radius:10px;
+  background:black;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.btn:hover{
+  background:#555;
+}
+
+.switch{
+  text-align:center;
+  margin-top:15px;
+}
+
+.switch a{
+  color:#0077aa;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+@media screen and (max-width: 768px){
+
+  body{
+    height: auto;             
+    min-height: 100vh;
+    padding: 20px;           
+    align-items: flex-start;   
+    justify-content: center;
+  }
+
+  .auth-container{
+    max-width: 520px;          
+    padding: 22px;
+    margin-top: 20px;
+  }
+
+  .close-btn{
+    top: 10px;
+    right: 12px;
+    font-size: 26px;
+  }
+
+  input{
+    padding: 12px;        
+  }
+
+  .btn{
+    padding: 13px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px){
+
+  body{
+    padding: 14px;
+  }
+
+  .auth-container{
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .auth-container h2{
+    font-size: 22px;
+  }
+
+  .auth-container p{
+    font-size: 14px;
+  }
+
+  label{
+    font-size: 14px;
+  }
+
+  input{
+    padding: 11px;
+    font-size: 15px;
+  }
+
+  .btn{
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .close-btn{
+    font-size: 24px;
+  }
+}

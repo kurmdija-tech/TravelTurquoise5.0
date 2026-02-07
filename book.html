@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Bookings</title>
+
+  
+  <link rel="stylesheet" href="style.css">
+
+  
+  <link rel="stylesheet" href="book.css">
+</head>
+<body>
+
+
+<header class="navbar">
+  
+   <div class="logo">
+    <img src="image2/logo.png"  alt="Turquoise Travel">
+  
+</div>
+
+</div>
+   </div>
+   <div class="search-box">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <form class="example" action="action_page.php">
+  <input type="text" placeholder="Search.." name="search">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+  </div>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+  <i class="fa fa-bars"></i>
+</button>
+ 
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="bookings.html">Bookings</a>
+    <div class="dropdown">
+      <button class="dropbtn">More <i class="fa fa-caret-down"></i></button>
+      <div class="dropdown-content">
+        <a href="review.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+    </div>
+  </div>
+  
+
+</header>
+
+
+<main class="book-page">
+
+  <div class="book-title">
+    <h1>Complete Your Booking</h1>
+    <p>Review your dates and details, then continue to payment.</p>
+  </div>
+
+  <div class="book-grid">
+
+    <!-- LEFT: SUMMARY -->
+    <div class="panel">
+      <div class="panel-head"><i class="fa fa-calendar"></i> Booking Summary</div>
+      <div class="panel-body">
+
+       
+
+        <div class="sum-row">
+          <div class="sum-label">Check-in</div>
+          <div class="sum-value" id="checkin">—</div>
+        </div>
+
+        <div class="sum-row">
+          <div class="sum-label">Check-out</div>
+          <div class="sum-value" id="checkout">—</div>
+        </div>
+
+        <div class="sum-row">
+          <div class="sum-label">Guests</div>
+          <div class="sum-value" id="guests">—</div>
+        </div>
+
+        <div class="sum-row">
+          <div class="sum-label">Nights</div>
+          <div class="sum-value"><span class="badge" id="nights">0</span></div>
+        </div>
+
+        <div class="total-box">
+          <div class="sum-row" style="border-bottom:none;">
+            <div class="sum-label">Price / night</div>
+            <div class="sum-value">Rs <span id="ppn">3500</span></div>
+          </div>
+          <div class="total-line">
+            <span>Total</span>
+            <span>Rs <span id="total">0</span></span>
+          </div>
+        </div>
+
+      
+
+        <div class="cta">
+          <button class="btn-secondary" onclick="goBack()">← Back</button>
+          <button class="btn-primary" onclick="scrollToPayment()">Continue</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT: DETAILS + PAYMENT -->
+    <div class="panel" id="paymentPanel">
+      <div class="panel-head"><i class="fa fa-lock"></i> Guest & Payment Details</div>
+      <div class="panel-body">
+
+        <form onsubmit="placeBooking(event)">
+
+          <label>Guest Details</label>
+          <div class="two-col">
+            <input type="text" id="fname" placeholder="First name" required>
+            <input type="text" id="lname" placeholder="Last name" required>
+          </div>
+          <div class="two-col">
+            <input type="email" id="email" placeholder="Email address" required>
+            <input type="text" id="phone" placeholder="Phone number" required>
+          </div>
+
+          <label style="margin-top:14px;">Payment (Demo)</label>
+          <input type="text" id="card" placeholder="Card number (xxxx xxxx xxxx xxxx)" required>
+          <div class="two-col">
+            <input type="text" id="exp" placeholder="MM/YY" required>
+            <input type="text" id="cvv" placeholder="CVV" required>
+          </div>
+
+          <p class="pay-note">
+            This is a demo payment form for your project (no real payment processing).
+          </p>
+
+          <button type="submit" class="btn-primary">Confirm Booking</button>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<script>
+
+  const ci = localStorage.getItem("tt_checkin") || "";
+  const co = localStorage.getItem("tt_checkout") || "";
+  const guests = localStorage.getItem("tt_guests") || "—";
+
+  
+  document.getElementById("checkin").textContent = ci ? formatDate(ci) : "—";
+  document.getElementById("checkout").textContent = co ? formatDate(co) : "—";
+  document.getElementById("guests").textContent = guests;
+
+  
+  const pricePerNight = Number(localStorage.getItem("pricePerNight")) || 0;
+document.getElementById("ppn").textContent =
+  pricePerNight ? pricePerNight.toLocaleString() : "—";
+  document.getElementById("ppn").textContent = pricePerNight;
+
+  const nights = calcNights(ci, co);
+  document.getElementById("nights").textContent = nights;
+
+  const total = nights * pricePerNight;
+  document.getElementById("total").textContent = total.toLocaleString();
+
+  function calcNights(checkin, checkout){
+    if(!checkin || !checkout) return 0;
+    const d1 = new Date(checkin);
+    const d2 = new Date(checkout);
+    const diff = (d2 - d1) / (1000 * 60 * 60 * 24);
+    return diff > 0 ? Math.floor(diff) : 0;
+  }
+
+  function formatDate(val){
+   
+    const d = new Date(val);
+    const day = String(d.getDate()).padStart(2,"0");
+    const mon = String(d.getMonth()+1).padStart(2,"0");
+    const year = d.getFullYear();
+    return day + "/" + mon + "/" + year;
+  }
+
+  function goBack(){
+    window.location.href = "bookings.html";
+  }
+
+  function scrollToPayment(){
+    document.getElementById("paymentPanel").scrollIntoView({behavior:"smooth"});
+  }
+
+  function placeBooking(e){
+    e.preventDefault();
+    alert("booking confirmed - only a demo ");
+    
+    
+  }
+</script>
+
+<script>
+  const nav = document.querySelector(".navbar");
+  const btn = document.querySelector(".nav-toggle");
+
+  if(nav && btn){
+    btn.addEventListener("click", () => {
+      nav.classList.toggle("open");
+      const isOpen = nav.classList.contains("open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  }
+</script>
+
+</body>
+</html>

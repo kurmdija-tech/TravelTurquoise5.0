@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>long beach</title>
+
+<link rel="stylesheet" href="style.css">
+  
+  <link rel="stylesheet" href="longbeach.css">
+</head>
+<body>
+
+
+<header class="navbar">
+  
+   <div class="logo">
+    <img src="image2/logo.png"  alt="Turquoise Travel">
+  
+</div>
+
+</div>
+   </div>
+   <div class="search-box">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <form class="example" action="action_page.php">
+  <input type="text" placeholder="Search.." name="search">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+  </div>
+  
+ 
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="bookings.html">Bookings</a>
+    <div class="dropdown">
+      <button class="dropbtn">More <i class="fa fa-caret-down"></i></button>
+      <div class="dropdown-content">
+        <a href="review.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+    </div>
+  </div>
+  
+</header>
+<section class="hotel-page">
+
+  <div class="hotel-hero">
+    <img src="image2/longbeachhero.jpg" alt="Long Beach Mauritius">
+    <div class="hotel-hero-text">
+      <h1>Long Beach Mauritius</h1>
+      <p>Modern beachfront resort in Belle Mare with a long white-sand beach, stylish rooms, and lively dining options.</p>
+      <a href="book.html"
+   class="book-btn"
+   onclick="saveHotel('Le Meridien Mauritius', 3000)">
+   Book Now
+</a>
+    </div>
+  </div>
+
+  <div class="hotel-highlights">
+    <div class="highlight">★★★★★ Luxury</div>
+    <div class="highlight">Belle Mare</div>
+    <div class="highlight">Family-friendly</div>
+    <div class="highlight">Water sports</div>
+  </div>
+
+  <h2 class="section-title">Gallery</h2>
+  <div class="gallery-row">
+    <img src="image2/spa.jpg" alt = "The Spa" onclick="openImg(this)">
+    <img src="image2/longbeachroom.jpg" alt="Bedroom interior" onclick="openImg(this)">
+    <img src="image2/longbeachpool.jpg" alt="Pool area" onclick="openImg(this)">
+    <img src="image2/longbeachrestaurant.jpg" alt="Dining" onclick="openImg(this)">
+  </div>
+
+  <div class="img-expand" id="imgBox">
+    <span class="closebtn" onclick="closeImg()">&times;</span>
+    <img id="expandedImg" alt="">
+    <div id="imgtext"></div>
+  </div>
+
+  <h2 class="section-title">About this hotel</h2>
+  <p class="hotel-desc">
+    Long Beach is known for its fresh, contemporary vibe and a wide open shoreline. It’s a great pick if you want a clean modern
+    look, lots of activities, and plenty of space to relax by the lagoon.
+  </p>
+
+  <h2 class="section-title">Amenities</h2>
+  <ul class="amenities">
+    <li>Direct beach access</li>
+    <li>Multiple pools + activities</li>
+    <li>Restaurants, cafés, and bars</li>
+    <li>Gym, tennis, and water sports</li>
+    <li>Wi-Fi and family services</li>
+  </ul>
+
+</section>
+<script>
+function openImg(img) {
+  document.getElementById("imgBox").style.display = "block";
+  document.getElementById("expandedImg").src = img.src;
+  document.getElementById("imgtext").innerHTML = img.alt;
+}
+function closeImg() {
+  document.getElementById("imgBox").style.display = "none";
+}
+</script>
+</section>
+<script>
+function saveHotel(name, price){
+  localStorage.setItem("selectedHotel", name);
+  localStorage.setItem("pricePerNight", price);
+}
+</script>
+
+<footer class="footer">
+  <div class="footer-nav">
+    <a class="footer-btn" href="review.html">Reviews</a>
+    <a class="footer-btn" href="signup.html">Sign up</a>
+    <a class="footer-btn" href="contact.html">Contact</a>
+  </div>
+</footer>
+</body>
+</html>

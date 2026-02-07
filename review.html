@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews | Turquoise Travel</title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ 
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="review.css">
+
+  
+  
+</head>
+
+<body class="tt-review-page">
+
+
+  <header class="navbar">
+    <div class="logo">
+      <img src="image2/logo.png" alt="Turquoise Travel">
+    </div>
+
+    <div class="search-box">
+      <form class="example" action="action_page.php">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+ <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+  <i class="fa fa-bars"></i>
+</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="bookings.html">Bookings</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">More <i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content">
+          <a href="review.html">Reviews</a>
+          <a href="contact.html">Contact</a>
+          <a href="signup.html">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  
+  <main class="page mt-3 mb-4">
+
+   
+    <section class="page-header p-4 mb-4">
+      <h1 class="mb-2">Customer Reviews</h1>
+      <p class="mb-0">Read real experiences and share your feedback with Turquoise Travel.</p>
+    </section>
+
+   
+    <section class="review-grid mb-4" id="reviewGrid">
+
+      <div class="review-card">
+        <div class="review-top">
+          <h3>Aisha N.</h3>
+          <div class="stars">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+          </div>
+        </div>
+        <div class="review-meta">
+          <i class="fa fa-map-marker"></i> Airport Transfer • Jan 2026
+        </div>
+        <p>Driver was punctual and very polite. Car was clean and comfortable. Easy booking too.</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top">
+          <h3>Kevin L.</h3>
+          <div class="stars">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+          </div>
+        </div>
+        <div class="review-meta">
+          <i class="fa fa-map-marker"></i> Group Tour • Jan 2026
+        </div>
+        <p>Great itinerary and guide. Would love a bit more time at the viewpoints, but overall amazing day.</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top">
+          <h3>Sarah D.</h3>
+          <div class="stars">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+          </div>
+        </div>
+        <div class="review-meta">
+          <i class="fa fa-map-marker"></i> Car Rental • Jan 2026
+        </div>
+        <p>Quick pickup and easy process. The car was in good condition and perfect for exploring Mauritius.</p>
+      </div>
+
+    </section>
+
+    
+    <section class="review-form-wrap p-4">
+      <h2 class="mb-3">Leave a Review</h2>
+
+      <form class="review-form" id="reviewForm">
+        <label for="name">Your Name</label>
+        <input id="name" type="text" placeholder="Enter your name" required>
+
+        <label for="service">Service</label>
+        <select id="service" required>
+          <option value="">Select a service</option>
+          <option>Airport Transfer</option>
+          <option>Private Tour</option>
+          <option>Group Tour</option>
+          <option>Car Rental</option>
+          <option>Hotels</option>
+        </select>
+
+        <label for="rating">Rating</label>
+        <select id="rating" required>
+          <option value="">Select rating</option>
+          <option value="5">5 - Excellent</option>
+          <option value="4">4 - Very Good</option>
+          <option value="3">3 - Good</option>
+          <option value="2">2 - Fair</option>
+          <option value="1">1 - Poor</option>
+        </select>
+
+        <label for="message">Review</label>
+        <textarea id="message" rows="4" placeholder="Write your review..." required></textarea>
+
+      
+        <button type="submit" class="tt-btn w-100 py-2 mt-2">Submit Review</button>
+      </form>
+
+      <p class="note mt-2 mb-0">Your review will appear above after submission (demo mode).</p>
+    </section>
+
+  </main>
+
+  
+  <footer class="footer">
+    <div class="footer-nav">
+      <a class="footer-btn" href="review.html">Reviews</a>
+      <a class="footer-btn" href="signup.html">Sign up</a>
+      <a class="footer-btn" href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <script>
+    document.getElementById("reviewForm").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const service = document.getElementById("service").value;
+      const rating = parseInt(document.getElementById("rating").value, 10);
+      const message = document.getElementById("message").value.trim();
+
+      let stars = "";
+      for(let i=1;i<=5;i++){
+        stars += (i<=rating) ? '<i class="fa fa-star"></i>' : '<i class="fa fa-star-o"></i>';
+      }
+
+      const newCard = `
+        <div class="review-card">
+          <div class="review-top">
+            <h3>${escapeHtml(name)}</h3>
+            <div class="stars">${stars}</div>
+          </div>
+          <div class="review-meta">
+            <i class="fa fa-map-marker"></i> ${escapeHtml(service)} • Just now
+          </div>
+          <p>${escapeHtml(message)}</p>
+        </div>
+      `;
+
+      document.getElementById("reviewGrid").insertAdjacentHTML("afterbegin", newCard);
+      this.reset();
+    });
+
+    function escapeHtml(text){
+      return text
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+    }
+  </script>
+<script>
+  const nav = document.querySelector(".navbar");
+  const btn = document.querySelector(".nav-toggle");
+
+  if(nav && btn){
+    btn.addEventListener("click", () => {
+      nav.classList.toggle("open");
+      const isOpen = nav.classList.contains("open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  }
+</script>
+</body>
+</html>
+

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Car Rentals</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="car.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+  <div class="logo">
+    <img src="image2/logo.png" alt="Turquoise Travel">
+  </div>
+
+  <div class="search-box">
+    <form class="example" action="action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+ <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+  <i class="fa fa-bars"></i>
+</button>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="bookings.html">Bookings</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">More <i class="fa fa-caret-down"></i></button>
+      <div class="dropdown-content">
+        <a href="review.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+    </div>
+  </div>
+
+</header>
+
+
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>CAR RENTALS</h1>
+    <p>
+      Rent a car and explore Mauritius at your own pace. Choose from economy cars, SUVs,
+      group transport, and premium vehicles with flexible rental options.
+    </p>
+  </div>
+</section>
+
+<!-- VEHICLES -->
+<section class="section">
+  <h2 class="section-title">Available Vehicles</h2>
+
+  <div class="grid">
+
+    <div class="car-card">
+      <div class="car-img">
+        <img src="image2/neweconomycar.jpg" alt="Economy Car">
+      </div>
+      <div class="car-body">
+        <h3>Economy Car</h3>
+        <p class="meta"><i class="fa fa-car"></i> Small & Fuel Efficient</p>
+        <p class="desc">Perfect for city travel and couples.</p>
+        <p class="price">From Rs 1,200 / day</p>
+        <button class="cta" onclick="openForm('Economy Car Rental')">Contact</button>
+      </div>
+    </div>
+
+    <div class="car-card">
+      <div class="car-img">
+        <img src="image2/newSUV.jpg" alt="SUV">
+      </div>
+      <div class="car-body">
+        <h3>SUV</h3>
+        <p class="meta"><i class="fa fa-taxi"></i> Comfort & Space</p>
+        <p class="desc">Ideal for families and long drives.</p>
+        <p class="price">From Rs 2,000 / day</p>
+        <button class="cta" onclick="openForm('SUV Rental')">Contact</button>
+      </div>
+    </div>
+
+    <div class="car-card">
+      <div class="car-img">
+        <img src="image2/newminibus.png" alt="Minibus">
+      </div>
+      <div class="car-body">
+        <h3>Minibus</h3>
+        <p class="meta"><i class="fa fa-bus"></i> Group Transport</p>
+        <p class="desc">Great for groups and tour participants.</p>
+        <p class="price">From Rs 3,000 / day</p>
+        <button class="cta" onclick="openForm('Minibus Rental')">Contact</button>
+      </div>
+    </div>
+
+    <div class="car-card">
+      <div class="car-img">
+        <img src="image2/premiumcarrentsl.png" alt="Premium Vehicle">
+      </div>
+      <div class="car-body">
+        <h3>Premium Vehicle</h3>
+        <p class="meta"><i class="fa fa-diamond"></i> Luxury & Style</p>
+        <p class="desc">VIP travel with premium comfort.</p>
+        <p class="price">From Rs 4,500 / day</p>
+        <button class="cta" onclick="openForm('Premium Vehicle Rental')">Contact</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="contactModal" class="modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeForm()">&times;</button>
+
+    <h2 class="modal-title">Contact <span id="carName"></span></h2>
+    <p class="modal-sub">Send us your details and we’ll reply quickly.</p>
+
+    <form class="modal-form">
+      <label>Your Name</label>
+      <input type="text" placeholder="Enter your name" required>
+
+      <label>Your Email</label>
+      <input type="email" placeholder="Enter your email" required>
+
+      <label>Message</label>
+      <textarea rows="5" placeholder="Write your message..." required></textarea>
+
+      <button type="submit" class="modal-btn">Send</button>
+    </form>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-nav">
+    <a class="footer-btn" href="review.html">Reviews</a>
+    <a class="footer-btn" href="signup.html">Sign up</a>
+    <a class="footer-btn" href="contact.html">Contact</a>
+  </div>
+</footer>
+
+<script>
+function openForm(car){
+  document.getElementById("carName").innerText = car;
+  document.getElementById("contactModal").style.display = "flex";
+}
+function closeForm(){
+  document.getElementById("contactModal").style.display = "none";
+}
+window.onclick = function(e){
+  const modal = document.getElementById("contactModal");
+  if(e.target === modal) closeForm();
+}
+</script>
+<script>
+  const nav = document.querySelector(".navbar");
+  const btn = document.querySelector(".nav-toggle");
+
+  if(nav && btn){
+    btn.addEventListener("click", () => {
+      nav.classList.toggle("open");
+      const isOpen = nav.classList.contains("open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Bookings</title>
+
+  
+  <link rel="stylesheet" href="style.css">
+
+  
+  <link rel="stylesheet" href="grouptours.css">
+</head>
+<body>
+
+
+<header class="navbar">
+  
+   <div class="logo">
+    <img src="image2/logo.png"  alt="Turquoise Travel">
+  
+</div>
+
+</div>
+   </div>
+   <div class="search-box">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <form class="example" action="action_page.php">
+  <input type="text" placeholder="Search.." name="search">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+  </div>
+   <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+  <i class="fa fa-bars"></i>
+</button>
+ 
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="bookings.html">Bookings</a>
+    <div class="dropdown">
+      <button class="dropbtn">More <i class="fa fa-caret-down"></i></button>
+      <div class="dropdown-content">
+        <a href="review.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+    </div>
+  </div>
+  
+
+</header>
+
+</header>
+
+
+
+  <div class="bg-image">
+  <div class="bg-text">
+    <h2>GROUP TOURS</h2>
+    <p>
+      Explore Mauritius together with our group tours. Perfect for families and friends who want fun,
+      comfort, and great value in one unforgettable experience.
+    </p>
+  </div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">Group Tour Packages</h2>
+
+  <div class="row">
+
+    <div class="column">
+      <div class="card">
+        <img src="image2/north.webp" alt="North Mauritius">
+        <div class="container">
+          <h2>North Mauritius Highlights</h2>
+          <p class="title">Full Day Tour</p>
+          <p>Grand Baie, Cap Malheureux and beach stops.</p>
+          <p class="price">From Rs 1600 / person</p>
+          <button class="button" onclick="openForm('North Mauritius Highlights')">Contact</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="image2/south.webp" alt="South Coast">
+        <div class="container">
+          <h2>South Coast Adventure</h2>
+          <p class="title">Full Day Tour</p>
+          <p>Scenic routes and cultural stops.</p>
+          <p class="price">From Rs 1750 / person</p>
+          <button class="button" onclick="openForm('South Coast Adventure')">Contact</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="image2/Chamarel.jpg" alt="Chamarel">
+        <div class="container">
+          <h2>Chamarel & 7 Coloured Earth</h2>
+          <p class="title">Full Day Tour</p>
+          <p>Waterfalls and famous viewpoints.</p>
+          <p class="price">From Rs 1900 / person</p>
+          <button class="button" onclick="openForm('Chamarel Tour')">Contact</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="image2/catamaran.avif" alt="Catamaran">
+        <div class="container">
+          <h2>Catamaran Cruise</h2>
+          <p class="title">Shared Cruise</p>
+          <p>Lagoon cruise and island vibes.</p>
+          <p class="price">From Rs 2500 / person</p>
+          <button class="button" onclick="openForm('Catamaran Cruise')">Contact</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT MODAL -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeForm()">&times;</span>
+
+    <h2>Contact <span id="personName"></span></h2>
+
+    <form>
+      <label>Your Name</label>
+      <input type="text" required>
+
+      <label>Your Email</label>
+      <input type="email" required>
+
+      <label>Message</label>
+      <textarea rows="5" required></textarea>
+
+      <button type="submit" class="submit-btn">Send</button>
+    </form>
+  </div>
+</div>
+
+<script>
+    function openForm(person){
+  document.getElementById("personName").innerText = person;
+  document.getElementById("contactModal").style.display = "block";
+}
+
+function closeForm(){
+  document.getElementById("contactModal").style.display = "none";
+}
+
+window.onclick = function(event){
+  let modal = document.getElementById("contactModal");
+  if(event.target === modal){
+    modal.style.display = "none";
+  }
+}
+
+</script>
+</section>
+<footer class="footer">
+  <div class="footer-nav">
+    <a class="footer-btn" href="review.html">Reviews</a>
+    <a class="footer-btn" href="signup.html">Sign up</a>
+    <a class="footer-btn" href="contact.html">Contact</a>
+  </div>
+</footer>
+<script>
+  const nav = document.querySelector(".navbar");
+  const btn = document.querySelector(".nav-toggle");
+
+  if(nav && btn){
+    btn.addEventListener("click", () => {
+      nav.classList.toggle("open");
+      const isOpen = nav.classList.contains("open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Group Tours</title>
+
+  <!-- Your main site styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="attraction.css">
+
+  <!-- Font Awesome (put in head) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <img src="image2/logo.png" alt="Turquoise Travel">
+  </div>
+
+  <div class="search-box">
+    <form class="example" action="action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+ <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+  <i class="fa fa-bars"></i>
+</button>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="bookings.html">Bookings</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">More <i class="fa fa-caret-down"></i></button>
+      <div class="dropdown-content">
+        <a href="review.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <div class="hero-card">
+    <h2>ATTRACTION TOURS</h2>
+    <p>
+      Explore Mauritius together with our attraction tours. Perfect for families and friends who want fun,
+      comfort, and great value in one unforgettable experience.
+    </p>
+  </div>
+</section>
+
+
+<section class="tours-section">
+  <h2 class="section-title">Attractions & Tours</h2>
+  <p class="section-subtitle">Choose a tour and explore the best of Mauritius.</p>
+
+  <div class="tours-grid">
+
+    <article class="tour-card">
+      <img src="image2/newnorthmur.jpg" alt="North Tour">
+      <div class="tour-body">
+        <h3>North Mauritius Highlights</h3>
+        <p>Grand Baie, Cap Malheureux and beach stops.</p>
+        <p class="tour-price">From Rs 1,600 / person</p>
+        <button class="book-btn" onclick="openForm('North Mauritius Highlights')">Book</button>
+      </div>
+    </article>
+
+    <article class="tour-card">
+      <img src="image2/southmur.webp" alt="South Tour">
+      <div class="tour-body">
+        <h3>South Coast Adventure</h3>
+        <p>Scenic viewpoints and cultural stops.</p>
+        <p class="tour-price">From Rs 1,750 / person</p>
+        <button class="book-btn" onclick="openForm('South Coast Adventure')">Book</button>
+      </div>
+    </article>
+
+    <article class="tour-card">
+      <img src="image2/Chamarel.jpg" alt="Chamarel">
+      <div class="tour-body">
+        <h3>Chamarel & 7 Coloured Earth</h3>
+        <p>Waterfalls, viewpoints and nature.</p>
+        <p class="tour-price">From Rs 1,900 / person</p>
+        <button class="book-btn" onclick="openForm('Chamarel & 7 Coloured Earth')">Book</button>
+      </div>
+    </article>
+
+    <article class="tour-card">
+      <img src="image2/catamaran.avif" alt="Catamaran">
+      <div class="tour-body">
+        <h3>Catamaran Cruise</h3>
+        <p>Lagoon cruise + island vibes.</p>
+        <p class="tour-price">From Rs 2,500 / person</p>
+        <button class="book-btn" onclick="openForm('Catamaran Cruise')">Book</button>
+      </div>
+    </article>
+
+    <article class="tour-card">
+      <img src="image2/ilsauxcerfs.webp" alt="Ile Aux Cerfs">
+      <div class="tour-body">
+        <h3>Île aux Cerfs Day Trip</h3>
+        <p>Boat transfer + beach time.</p>
+        <p class="tour-price">From Rs 2,200 / person</p>
+        <button class="book-btn" onclick="openForm('Île aux Cerfs Day Trip')">Book</button>
+      </div>
+    </article>
+
+    <article class="tour-card">
+      <img src="image2/crystallagoon.webp" alt="Snorkeling">
+      <div class="tour-body">
+        <h3>Snorkeling Experience</h3>
+        <p>Crystal lagoon + guided session.</p>
+        <p class="tour-price">From Rs 1,300 / person</p>
+        <button class="book-btn" onclick="openForm('Snorkeling Experience')">Book</button>
+      </div>
+    </article>
+
+    <article class="tour-card">
+      <img src="image2/dolphinwatching.jpg" alt="Dolphins">
+      <div class="tour-body">
+        <h3>Dolphin Watching</h3>
+        <p>Morning boat trip on the west coast.</p>
+        <p class="tour-price">From Rs 2,400 / person</p>
+        <button class="book-btn" onclick="openForm('Dolphin Watching')">Book</button>
+      </div>
+    </article>
+
+    <article class="tour-card">
+      <img src="image2/portlpuismur.webp" alt="Port Louis">
+      <div class="tour-body">
+        <h3>Port Louis City Tour</h3>
+        <p>Market, waterfront and local culture.</p>
+        <p class="tour-price">From Rs 1,200 / person</p>
+        <button class="book-btn" onclick="openForm('Port Louis City Tour')">Book</button>
+      </div>
+    </article>
+
+    <article class="tour-card">
+      <img src="image2/blackrivergorges.jpg" alt="Black River">
+      <div class="tour-body">
+        <h3>Black River Gorges</h3>
+        <p>Hiking + panoramic viewpoints.</p>
+        <p class="tour-price">From Rs 1,700 / person</p>
+        <button class="book-btn" onclick="openForm('Black River Gorges')">Book</button>
+      </div>
+    </article>
+
+    <article class="tour-card">
+      <img src="image2/pamplemoussegarden.webp" alt="Botanical Garden">
+      <div class="tour-body">
+        <h3>Pamplemousses Botanical Garden</h3>
+        <p>Giant water lilies + calm walk.</p>
+        <p class="tour-price">From Rs 900 / person</p>
+        <button class="book-btn" onclick="openForm('Pamplemousses Botanical Garden')">Book</button>
+      </div>
+    </article>
+
+    <article class="tour-card">
+      <img src="image2/teasssss.jpg" alt="Tea Route">
+      <div class="tour-body">
+        <h3>Tea Route Experience</h3>
+        <p>Tea tasting + local heritage spots.</p>
+        <p class="tour-price">From Rs 1,450 / person</p>
+        <button class="book-btn" onclick="openForm('Tea Route Experience')">Book</button>
+      </div>
+    </article>
+
+    <article class="tour-card">
+      <img src="image2/waterfalllllll.avif" alt="Waterfall">
+      <div class="tour-body">
+        <h3>Waterfall & Viewpoints</h3>
+        <p>Relaxing nature route + photo stops.</p>
+        <p class="tour-price">From Rs 1,350 / person</p>
+        <button class="book-btn" onclick="openForm('Waterfall & Viewpoints')">Book</button>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="contactModal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="modal-close" type="button" onclick="closeForm()" aria-label="Close">&times;</button>
+
+    <h2 class="modal-title">Book: <span id="personName"></span></h2>
+    <p class="modal-subtitle">Tell us your details and we’ll confirm availability.</p>
+
+    <form onsubmit="return submitTourForm(event)">
+      <label>Your Name</label>
+      <input type="text" id="custName" placeholder="Enter your name" required>
+
+      <label>Your Email</label>
+      <input type="email" id="custEmail" placeholder="Enter your email" required>
+
+      <label>Number of persons</label>
+      <input type="number" id="custPeople" min="1" placeholder="e.g. 2" required>
+
+      <label>Message</label>
+      <textarea id="custMsg" rows="5" placeholder="Any special requests?" required></textarea>
+
+      <button type="submit" class="submit-btn">Send</button>
+    </form>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-nav">
+    <a class="footer-btn" href="review.html">Reviews</a>
+    <a class="footer-btn" href="signup.html">Sign up</a>
+    <a class="footer-btn" href="contact.html">Contact</a>
+  </div>
+</footer>
+
+<script>
+function openForm(tourName){
+  document.getElementById("personName").innerText = tourName;
+  document.getElementById("contactModal").style.display = "block";
+  document.getElementById("contactModal").setAttribute("aria-hidden","false");
+}
+
+function closeForm(){
+  document.getElementById("contactModal").style.display = "none";
+  document.getElementById("contactModal").setAttribute("aria-hidden","true");
+}
+
+window.onclick = function(event){
+  const modal = document.getElementById("contactModal");
+  if(event.target === modal){
+    closeForm();
+  }
+}
+
+
+function submitTourForm(e){
+  e.preventDefault();
+  alert("Sent! (Demo) We will contact you soon.");
+  closeForm();
+  return false;
+}
+</script>
+
+<script>
+  const nav = document.querySelector(".navbar");
+  const btn = document.querySelector(".nav-toggle");
+
+  if(nav && btn){
+    btn.addEventListener("click", () => {
+      nav.classList.toggle("open");
+      const isOpen = nav.classList.contains("open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  }
+</script>
+
+</body>
+</html>

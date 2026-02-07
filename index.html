@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+   <div class="logo">
+    <img src="image2/logo.png"  alt="Turquoise Travel">
+  
+</div>
+
+</div>
+   <div class="search-box">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <form class="example" action="action_page.php">
+  <input type="text" placeholder="Search.." name="search">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+  </div>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+  <i class="fa fa-bars"></i>
+</button>
+
+ 
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="bookings.html">Bookings</a>
+    <div class="dropdown">
+      <button class="dropbtn">More <i class="fa fa-caret-down"></i></button>
+      <div class="dropdown-content">
+        <a href="review.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="calc.html">Calculator</a>
+        
+      </div>
+    </div>
+  </div>
+
+
+</header>
+  <div class="slideshow-container">
+ <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="image2/pic1.webp" style="width:100%">
+    <div class="text">EXPERIENCE OUR INCREDIBLE BLUES</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="image2/pic2.jpg" style="width:100%">
+    
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="image2/pic3.webp" style="width:100%">
+    
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+  
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000); 
+}
+
+</script>
+
+<script>
+  function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+<section class="features">
+  <h2>For the Curious</h2>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <i class="fa fa-map"></i>
+      <h3><a href="private.html">Private Tours</a></h3>
+      <p>Personalised experiences designed around your preferences.</p>
+    </div>
+
+    <div class="feature-card">
+      <i class="fa fa-users"></i>
+      <h3><a href="grouptours.html">Group Tours</a></h3>
+      <p>Affordable guided tours with fellow travellers.</p>
+    </div>
+
+    <div class="feature-card">
+      <i class="fa fa-hotel"></i>
+       <h3><a href="bookings.html">Hotels and Accomodation</a></h3>
+      <p>Comfortable stays to suit every budget and style.</p>
+    </div>
+
+    <div class="feature-card">
+      <i class="fa fa-plane"></i>
+      <h3><a href="airport.html">Airport Transfers</a></h3>
+      <p>Safe and reliable transfers to and from the airport.</p>
+    </div>
+
+    <div class="feature-card">
+      <i class="fa fa-car"></i>
+      <h3><a href="car.html">Car Rentals</a></h3>
+      
+      <p>Flexible car rental options for smooth travel.</p>
+    </div>
+
+    <div class="feature-card">
+      <i class="fa fa-map-signs"></i>
+      
+      <h3><a href="attraction.html">Attractions & Tours</a></h3>
+      <p>Discover must-see attractions and guided activities.</p>
+    </div>
+<div class="feature-card">
+      <i class="fa fa-user"></i>
+      <h3><a href="review.html">Reviews</a></h3>
+      <p>For your experience and for the experience of others, let us know your opinion! </p>
+    </div>
+    <div class="feature-card">
+      <i class="fa fa-book"></i>
+      <h3><a href="contact.html">Contact Us</a></h3>
+      <p>Any inquires, only one click u need</p>
+    </div>
+  </div>
+  
+  </div>
+</section>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<section class="curious">
+  <h3>OUR HOTELS</h3>
+
+  <div class="hotel-slider">
+
+  <div class="circle-container"  id="circleTrack">
+
+    <div class="item">
+      <div class="circle-img">
+        <img src="image2/h1.jpg" alt="SOFITEL HOTEL">
+      </div>
+       <p class="HOTEL">SOFITEL HOTEL</p>
+      <p class="price">Rs 2,500</p>
+       <p class="stays">per night</p>
+      
+    </div>
+
+    <div class="item">
+      <div class="circle-img">
+        <img src="image2/h2.jpg" alt="TAMASSA HOTEL">
+      </div>
+     <p class="HOTEL">TAMASSA HOTEL</p>
+      <p class="price">Rs 2,500</p>
+      
+     
+    </div>
+
+    <div class="item">
+      <div class="circle-img">
+        <img src="image2/longbeach.jpg" alt="LONG BEACH">
+      </div>
+        <p class="HOTEL">LONG BEACH HOTEL</p>
+      <p class="price">Rs 3000</p>
+       <p class="stays">per night</p>
+       
+    </div>
+
+ <div class="item">
+      <div class="circle-img">
+        <img src="image2/lux-grand-baie-exterior.jpg" alt="LUX GRAND BAIE">
+      </div>
+        <p class="HOTEL">LUX GRAND BAIE HOTEL</p>
+      <p class="price">Rs 3,500</p>
+       <p class="stays">per night</p>
+        
+    </div>
+    <div class="item">
+      <div class="circle-img">
+        <img src="image2/ambre.avif" alt="AMBRE HOTEL">
+      </div>
+        <p class="HOTEL">AMBRE HOTEL</p>
+      <p class="price">Rs 2,700</p>
+       <p class="stays">per night</p>
+     
+    </div>
+  <div class="item">
+      <div class="circle-img">
+        <img src="image2/oberoi.webp" alt="OBEROI">
+      </div>
+       <p class="HOTEL">OBEROI HOTEL</p>
+      <p class="price">Rs 5,000</p>
+       <p class="stays">per night</p>
+       
+    </div>
+  </div>
+
+
+
+</div>
+</section>
+
+</article>
+
+
+<section class="blog">
+  <h1>Blog</h1>
+
+  <article class="blog-box">
+    <img src="image2/blog.jpg" alt="Mauritius Landscape" class="blog-cover">
+
+    <div class="blog-header">
+      <h2>The Historical Evolution of Tourism in Mauritius</h2>
+      <p class="blog-meta">By TurquoiseTravel • Cultural & Historical Essay</p>
+    </div>
+
+    <div class="blog-scroll">
+      <p>Mauritius, an island located in the Indian Ocean, has undergone a remarkable
+        transformation from an uninhabited landmass to one of the world’s most admired
+        travel destinations. Early Arab sailors were among the first to record the
+        island’s existence, followed by Portuguese explorers in the sixteenth century.
+        However, it was the Dutch, French, and British colonial periods that most
+        significantly shaped the island’s infrastructure, economy, and cultural identity.
+      </p>
+      <p> 
+        During the colonial era, Mauritius functioned primarily as a strategic maritime
+        stop and an agricultural economy driven by sugar plantations. Labour migration
+        from Africa, India, China, and Europe created a multicultural society whose
+        traditions remain visible today through language, cuisine, religion, and
+        architecture. These historical layers laid the foundation for the island’s
+        later appeal to international visitors.
+      </p>
+      <p>
+        The emergence of tourism in Mauritius during the twentieth century marked a
+        turning point in national development. As global travel expanded, the island
+        capitalised on its natural landscapes, tropical climate, and cultural harmony.
+        Coastal villages gradually evolved into resort destinations, offering employment
+        opportunities while also raising concerns regarding environmental conservation
+        and social balance.
+         </p>
+      <p>
+        Modern tourism in Mauritius emphasises sustainability, heritage preservation,
+        and responsible travel. Historical landmarks, such as colonial estates and
+        port cities, are now protected as cultural assets, while eco-tourism initiatives
+        promote environmental awareness. This careful integration of history and modern
+        travel ensures that tourism continues to benefit both visitors and local
+        communities.
+     </p>
+      <p>
+      In conclusion, the success of tourism in Mauritius is deeply rooted in its
+        historical journey. By preserving its past while embracing innovation, the
+        island serves as a model for sustainable tourism development. Understanding
+        this historical context allows travellers to appreciate Mauritius not only
+        as a destination of beauty, but as a nation shaped by centuries of global
+        interaction.
+      </p>
+     
+      <p>
+    </div>
+  </article>
+</section>
+
+<footer class="footer">
+  <div class="footer-nav">
+    <a class="footer-btn" href="review.html">Reviews</a>
+    <a class="footer-btn" href="signup.html">Sign up</a>
+    <a class="footer-btn" href="contact.html">Contact</a>
+  </div>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  let index = 0;
+  let autoSlideInterval;
+
+  const track = document.getElementById("circleTrack");
+  const slider = document.querySelector(".hotel-slider");
+
+  if (!track || !slider) {
+    console.error("Slider elements not found");
+    return;
+  }
+
+  function moveSlide(direction) {
+    const items = track.children.length;
+    const visible = 4;
+
+    index += direction;
+
+    if (index > items - visible) index = 0;
+    if (index < 0) index = items - visible;
+
+    track.style.transform = `translateX(-${index * 25}%)`;
+  }
+
+  function startAutoSlide() {
+    stopAutoSlide(); // prevent multiple intervals
+    autoSlideInterval = setInterval(() => {
+      moveSlide(1);
+    }, 2000);
+  }
+
+  function stopAutoSlide() {
+    if (autoSlideInterval) {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = null;
+    }
+  }
+
+ 
+  startAutoSlide();
+
+  slider.addEventListener("mouseenter", stopAutoSlide);
+  slider.addEventListener("mouseleave", startAutoSlide);
+
+});
+</script>
+
+<script>
+  const nav = document.querySelector(".navbar");
+  const btn = document.querySelector(".nav-toggle");
+
+  if(nav && btn){
+    btn.addEventListener("click", () => {
+      nav.classList.toggle("open");
+      const isOpen = nav.classList.contains("open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  }
+</script>
+
+</body>
+</html>
+

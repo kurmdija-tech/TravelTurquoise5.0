@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ambre</title>
+
+<link rel="stylesheet" href="style.css">
+  
+  <link rel="stylesheet" href="ambre.css">
+</head>
+<body>
+
+
+<header class="navbar">
+  
+   <div class="logo">
+    <img src="image2/logo.png"  alt="Turquoise Travel">
+  
+</div>
+
+</div>
+   </div>
+   <div class="search-box">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <form class="example" action="action_page.php">
+  <input type="text" placeholder="Search.." name="search">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+  </div>
+  
+ 
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="bookings.html">Bookings</a>
+    <div class="dropdown">
+      <button class="dropbtn">More <i class="fa fa-caret-down"></i></button>
+      <div class="dropdown-content">
+        <a href="review.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+    </div>
+  </div>
+  
+
+</header>
+<section class="hotel-page">
+
+  <div class="hotel-hero">
+    <img src="image2/ambre hero.jpg" alt="Ambre Resort Mauritius">
+    <div class="hotel-hero-text">
+      <h1>Ambre Resort Mauritius</h1>
+      <p>Relaxed all-inclusive resort in Belle Mare with a lively beach vibe, great value, and easy-going luxury.</p>
+     <a href="book.html"
+   class="book-btn"
+    onclick="saveHotel('ambre', 2700)">
+   Book Now
+</a>
+
+    </div>
+  </div>
+
+  <div class="hotel-highlights">
+    <div class="highlight">All-Inclusive</div>
+    <div class="highlight">Belle Mare</div>
+    <div class="highlight">Adults-friendly vibe</div>
+    <div class="highlight">Beachfront</div>
+  </div>
+
+  <h2 class="section-title">Gallery</h2>
+  <div class="gallery-row">
+    <img src="image2/ambresunset.jpg" alt="Beachfront view" onclick="openImg(this)">
+    <img src="image2/ambrepool.jpg" alt="Pool area" onclick="openImg(this)">
+    <img src="image2/ambreroom.jpg" alt="Room interior" onclick="openImg(this)">
+    <img src="image2/ambredinning.jpg" alt="Dining area" onclick="openImg(this)">
+  </div>
+
+  <div class="img-expand" id="imgBox">
+    <span class="closebtn" onclick="closeImg()">&times;</span>
+    <img id="expandedImg" alt="">
+    <div id="imgtext"></div>
+  </div>
+
+  <h2 class="section-title">About this hotel</h2>
+  <p class="hotel-desc">
+    Ambre is popular for its relaxed, fun energy and all-inclusive ease. It’s ideal if you want beachfront comfort,
+    activities, and a “holiday mode” vibe without overthinking the details.
+  </p>
+
+  <h2 class="section-title">Amenities</h2>
+  <ul class="amenities">
+    <li>All-inclusive packages</li>
+    <li>Beach + pool access</li>
+    <li>Restaurants, bars, and entertainment</li>
+    <li>Water sports</li>
+    <li>Wi-Fi and concierge help</li>
+  </ul>
+
+</section>
+
+
+
+
+
+
+
+<script>
+function openImg(img) {
+  document.getElementById("imgBox").style.display = "block";
+  document.getElementById("expandedImg").src = img.src;
+  document.getElementById("imgtext").innerHTML = img.alt;
+}
+function closeImg() {
+  document.getElementById("imgBox").style.display = "none";
+}
+</script>
+<script>
+function saveHotel(name, price){
+  localStorage.setItem("selectedHotel", name);
+  localStorage.setItem("pricePerNight", price);
+}
+</script>
+
+<footer class="footer">
+  <div class="footer-nav">
+    <a class="footer-btn" href="review.html">Reviews</a>
+    <a class="footer-btn" href="signup.html">Sign up</a>
+    <a class="footer-btn" href="contact.html">Contact</a>
+  </div>
+</footer>
+</body>
+</html>

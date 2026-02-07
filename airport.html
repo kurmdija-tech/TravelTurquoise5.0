@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>lux</title>
+
+<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="airport.css">
+  
+</head>
+<body>
+
+
+<header class="navbar">
+  
+   <div class="logo">
+    <img src="image2/logo.png"  alt="Turquoise Travel">
+  
+</div>
+
+</div>
+   </div>
+   <div class="search-box">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <form class="example" action="action_page.php">
+  <input type="text" placeholder="Search.." name="search">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+  </div>
+   <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+  <i class="fa fa-bars"></i>
+</button>
+ 
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="bookings.html">Bookings</a>
+    <div class="dropdown">
+      <button class="dropbtn">More <i class="fa fa-caret-down"></i></button>
+      <div class="dropdown-content">
+        <a href="review.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+    </div>
+  </div>
+  
+
+</header>
+<div class="intro-card">
+  <h2>Airport Transfers</h2>
+  <p>
+    Start your journey stress-free with our reliable airport transfer services.
+    Choose from private cars, family vans or luxury vehicles.
+  </p>
+</div>
+<section class="section">
+  <h2 class="section-title">Airport Transfer Packages</h2>
+
+  <div class="row">
+
+    <div class="column">
+      <div class="card">
+        <div class="card-icon standard"></div>
+        <div class="container">
+          <h2>Standard Airport Transfer</h2>
+          <p class="title">Private Car</p>
+          <p>Comfortable ride for couples or solo travelers.</p>
+          <p class="price">From Rs 1,200</p>
+          <button class="button" onclick="openForm('Standard Airport Transfer')">Contact</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+      <div class="card-icon standard"></div>
+        <div class="container">
+          <h2>Family Transfer</h2>
+          <p class="title">SUV / Van</p>
+          <p>Spacious transport for families and luggage.</p>
+          <p class="price">From Rs 1,800</p>
+          <button class="button" onclick="openForm('Family Airport Transfer')">Contact</button>
+         
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+       <div class="card-icon group"></div>
+        <div class="container">
+          <h2>Group Transfer</h2>
+          <p class="title">Minibus</p>
+          <p>Ideal for groups and tour participants.</p>
+          <p class="price">From Rs 2,500</p>
+          <button class="button" onclick="openForm('Group Airport Transfer')">Contact</button>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+       <div class="card-icon luxury"></div>
+        <div class="container">
+          <h2>Luxury Transfer</h2>
+          <p class="title">Premium Vehicle</p>
+          <p>VIP service with comfort and privacy.</p>
+          <p class="price">From Rs 3,500</p>
+          <button class="button" onclick="openForm('Luxury Airport Transfer')">Contact</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeForm()">&times;</span>
+
+    <h2>Contact <span id="personName"></span></h2>
+
+    <form>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" placeholder="Write your message..." rows="5" required></textarea>
+
+      <button type="submit" class="submit-btn">Send</button>
+    </form>
+  </div>
+</div>
+<script>
+function openForm(person) {
+  document.getElementById("personName").innerText = person;
+  document.getElementById("contactModal").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("contactModal").style.display = "none";
+}
+
+/* Close modal if user clicks outside the box */
+window.onclick = function(event) {
+  const modal = document.getElementById("contactModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+</section>
+<footer class="footer">
+  <div class="footer-nav">
+    <a class="footer-btn" href="review.html">Reviews</a>
+    <a class="footer-btn" href="signup.html">Sign up</a>
+    <a class="footer-btn" href="contact.html">Contact</a>
+  </div>
+</footer>
+
+<script>
+  const nav = document.querySelector(".navbar");
+  const btn = document.querySelector(".nav-toggle");
+
+  if(nav && btn){
+    btn.addEventListener("click", () => {
+      nav.classList.toggle("open");
+      const isOpen = nav.classList.contains("open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  }
+</script>
+</body>
+</html>
